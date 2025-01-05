@@ -1,0 +1,64 @@
+<div class="bg-white shadow-md">
+<!-- First Line: Logo, Search, Profile -->
+<div class="flex items-center justify-between px-6 py-4">
+    <!-- Logo -->
+    <div class="text-2xl font-bold text-gray-800" routerLink="/">
+      <a href="#">BrandLogo</a>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="flex-grow mx-6">
+      <input 
+        type="text" 
+        placeholder="Search for products..."(keyup.enter)="onSearch($event)"
+        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+      />
+    </div>
+
+    <!-- Profile Link -->
+    <div>
+      <a 
+        href="#"
+        class="text-gray-600 hover:text-gray-800 transition duration-300"
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          fill="none" 
+          viewBox="0 0 24 24" 
+          stroke-width="1.5" 
+          stroke="currentColor" 
+          class="w-6 h-6 inline-block mr-2"
+        >
+          <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            d="M15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.5 19.5a7.5 7.5 0 0115 0v.75H4.5v-.75z" 
+          />
+        </svg>
+        Profile
+      </a>
+    </div>
+  </div>
+
+  
+  <nav class="bg-gray-50 border-t">
+    <div class="container mx-auto px-6 py-2 flex justify-center space-x-6">
+      <!-- Second Line: Category Menu -->
+   @for (category of categoryList;track $index){
+    <a 
+    (click)="searchCategory(category?._id!)"
+    class="text-gray-600 hover:text-blue-500 font-medium transition-all duration-300 transform hover:scale-110 inline-block cursor-pointer"
+    style="text-decoration: none; display: inline-block;"
+  >
+    {{category.name}}
+  </a>
+  
+
+  
+
+   }
+      
+       
+    </div>
+  </nav>
+</div>
